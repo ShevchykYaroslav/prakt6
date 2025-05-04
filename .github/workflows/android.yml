@@ -22,9 +22,10 @@ jobs:
         distribution: 'temurin'
     - name: Grant execute permission for gradlew
       run: chmod +x Praktychna5/gradlew
-  
+
     - name: Build with Gradle
-      run: Praktychna5/gradlew assembleDebug
+      working-directory: Praktychna5
+      run: ./gradlew assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
